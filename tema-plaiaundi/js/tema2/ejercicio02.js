@@ -3,8 +3,17 @@
  * Ejercicio 2 · Number(), parseInt() y parseFloat()
  */
 
-const texto = '25.75 euros';
+const resultados = [
+    ['Number("25")', Number("25")],
+    ['Number("25.7")', Number("25.7")],
+    ['Number("25px")', Number("25px")],
+    ['parseInt("25px")', parseInt("25px")],
+    ['parseInt("25.7")', parseInt("25.7")],
+    ['parseFloat("25.7kg")', parseFloat("25.7kg")],
+    ['Number("")', Number("")],
+    ['Number(" ")', Number(" ")]
+];
 
-console.log('Number():', Number(texto));
-console.log('parseInt():', parseInt(texto));
-console.log('parseFloat():', parseFloat(texto));
+for (const [expresion, valor] of resultados) {
+    console.log(expresion, "->", valor, "| tipo:", typeof valor, "| NaN:", Number.isNaN(valor));
+}
